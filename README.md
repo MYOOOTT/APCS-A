@@ -1,2 +1,3 @@
 # fictional-lamp
-I'M TRYING TO DO SOMETHING ON GIT
+These are the files for the AP Computer Science Class, taught by Mr. Hays.
+
