@@ -40,7 +40,7 @@ public class Project6_3
             letterGrade += "-";
         } else if (numericGrade < 96 && (secondDigit >= 6 || secondDigit <= 9)) {
             letterGrade += "+";
-        } else if (numericGrade > 96) {
+        } else if (numericGrade >= 96) {
             letterGrade += "+";
         }
 

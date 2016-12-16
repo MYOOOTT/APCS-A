@@ -7,16 +7,33 @@ public class Project6_6
         Scanner reader = new Scanner(System.in);
         Random generator = new Random();
 
-        int die, total = 0;
+        int die1 = 0, die2 = 0, dollars, count, resetDollar;
+        int averageNum = 0, average;
+        int x = 0;
+        System.out.print("How many dollars do you have? ");
+        dollars = reader.nextInt();
+        resetDollar = dollars;
+        for (int i = 1; i <= 100; i++) {
+            count = 0;
+            dollars = resetDollar;
+            while (dollars > 0){
+                count++;
 
-        for (int i = 0; i <= 100; i++){
-            die = generator.nextInt(6) + 1;
-            total += die;
+                die1 = generator.nextInt(6) + 1;
+                die2 = generator.nextInt(6) + 1;
+
+                if (die1 + die2 == 7)
+                    dollars += 4;
+                else 
+                    dollars -= 1;
+
+            }
+            System.out.println("You are broke after " + count + " rolls. \n");
+            averageNum += count;
+            
         }
-        System.out.println(total);
-        int average =  (int) Math.round( (total / 100.0) );
-        System.out.println("The average number for rolls is: " + average);
-        
-        
+        average = averageNum / 100;
+        System.out.println("It takes someone on average with $" + resetDollar + " to become broke " +
+            "after " + average + " rolls.");
     }
 }
