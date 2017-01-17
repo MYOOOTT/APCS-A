@@ -26,13 +26,13 @@ public class TestScoresView_GUI extends JFrame{
     private JButton	averageLabel 		= new JButton("Average");
     private JButton	countLabel 			= new JButton("Count");
     private JButton	indexLabel			= new JButton("Index");
-    private JButton	nameField 			= new JButton("");
-    private JButton	test1Field				= new JButton("0");
-    private JButton	test2Field 			= new JButton("0");
-    private JButton	test3Field 			= new JButton("0");
-    private JButton	averageField 		= new JButton("0");
-    private JButton	countField 			= new JButton("0");
-    private JButton	indexField 			= new JButton("-1");
+    private JTextField	nameField 			= new JTextField("");
+    private JTextField	test1Field				= new JTextField("0");
+    private JTextField	test2Field 			= new JTextField("0");
+    private JTextField	test3Field 			= new JTextField("0");
+    private JTextField	averageField 		= new JTextField("0");
+    private JTextField	countField 			= new JTextField("0");
+    private JTextField	indexField 			= new JTextField("-1");
 
     //constructor
     public TestScoresView_GUI(TestScoresModel m) {
@@ -99,8 +99,8 @@ public class TestScoresView_GUI extends JFrame{
     }
 
     //updates fields with info from the model
-    private void display() {
-        Student s = model.currrentStudent();
+    private void displayInfo() {
+        Student s = model.currentStudent();
         if (s == null) { //no current student, so clear fields
             nameField.setText("");
             test1Field.setText("0");
@@ -114,7 +114,7 @@ public class TestScoresView_GUI extends JFrame{
             test1Field.setText("" + s.getScore(1));
             test2Field.setText("" + s.getScore(2));
             test3Field.setText("" + s.getScore(3));
-            averageField.setText("" + s.getAverage(3));
+            averageField.setText("" + s.getAverage());
             countField.setText("" + model.size());
             indexField.setText("" + model.currentPosition());
         }
@@ -122,7 +122,7 @@ public class TestScoresView_GUI extends JFrame{
 
     //creates and returns new student from field info
     private Student getInfoFromScreen() {
-        Student s = new Student(nameFIeld.getText());
+        Student s = new Student(nameField.getText());
         s.setScore(1, Integer.parseInt(test1Field.getText()));
         s.setScore(2, Integer.parseInt(test2Field.getText()));
         s.setScore(3, Integer.parseInt(test3Field.getText()));
@@ -135,13 +135,13 @@ public class TestScoresView_GUI extends JFrame{
             Student s = getInfoFromScreen();
             String message = s.validateData();
             if (message != null) {
-                JOptionPane.showMessageDialog(TestScoresView.this, message);
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, message);
                 return;
             }
             //attempt to add student and display error or update fields
             message = model.add(s);
             if (message != null)
-                JOptionPane.showMessageDialog(TestScoresView.this, message);
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, message);
             else 
                 displayInfo();
         }
