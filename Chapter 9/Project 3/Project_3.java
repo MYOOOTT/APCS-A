@@ -3,11 +3,14 @@
 public class Project_3
 {
     public static void main(String[] args) {
-
-        Mode object = new Mode();
+        Frequency object = new Frequency();
         
-        int mode = object.findMode(object.getList());
-        System.out.println(mode);
+        double median = object.findMedian();
+        System.out.println("Median:" + median);
+        int mode = object.findMode();
+        System.out.println("Mode:" + mode);
+        int[][] table = object.count();
+        object.printTable(table);
         
     }
 
