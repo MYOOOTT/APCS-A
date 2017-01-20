@@ -11,28 +11,28 @@ public class TestScoresView_GUI extends JFrame{
     // the view
 
     //declare and instantiate the window objects
-    private JButton	addButton 			= new JButton("Add");
-    private JButton	modifyButton 		= new JButton("Modify");
-    private JButton	firstButton 			= new JButton("<<");
-    private JButton	previousButton 	= new JButton("<");
-    private JButton	nextButton 			= new JButton(">");
-    private JButton	lastButton 			= new JButton(">>");
-    private JButton	highScoreButton 	= new JButton("Highest score");
-    private JButton	aveScoreButton 	= new JButton("Class Average");
-    private JButton	nameLabel 			= new JButton("Name");
-    private JButton	test1Label 			= new JButton("Test 1");
-    private JButton	test2Label 			= new JButton("Test 2");
-    private JButton	test3Label 			= new JButton("Test 3");
-    private JButton	averageLabel 		= new JButton("Average");
-    private JButton	countLabel 			= new JButton("Count");
-    private JButton	indexLabel			= new JButton("Index");
-    private JTextField	nameField 			= new JTextField("");
-    private JTextField	test1Field				= new JTextField("0");
-    private JTextField	test2Field 			= new JTextField("0");
-    private JTextField	test3Field 			= new JTextField("0");
-    private JTextField	averageField 		= new JTextField("0");
-    private JTextField	countField 			= new JTextField("0");
-    private JTextField	indexField 			= new JTextField("-1");
+    private JButton addButton           = new JButton("Add");
+    private JButton modifyButton        = new JButton("Modify");
+    private JButton firstButton             = new JButton("<<");
+    private JButton previousButton  = new JButton("<");
+    private JButton nextButton          = new JButton(">");
+    private JButton lastButton          = new JButton(">>");
+    private JButton highScoreButton     = new JButton("Highest score");
+    private JButton aveScoreButton  = new JButton("Class Average");
+    private JButton nameLabel           = new JButton("Name");
+    private JButton test1Label          = new JButton("Test 1");
+    private JButton test2Label          = new JButton("Test 2");
+    private JButton test3Label          = new JButton("Test 3");
+    private JButton averageLabel        = new JButton("Average");
+    private JButton countLabel          = new JButton("Count");
+    private JButton indexLabel          = new JButton("Index");
+    private JTextField  nameField           = new JTextField("");
+    private JTextField  test1Field              = new JTextField("0");
+    private JTextField  test2Field          = new JTextField("0");
+    private JTextField  test3Field          = new JTextField("0");
+    private JTextField  averageField        = new JTextField("0");
+    private JTextField  countField          = new JTextField("0");
+    private JTextField  indexField          = new JTextField("-1");
 
     //constructor
     public TestScoresView_GUI(TestScoresModel m) {
@@ -46,7 +46,7 @@ public class TestScoresView_GUI extends JFrame{
         indexField.setBackground(Color.white);
         //set up panels to organize widgets and add them to the window
         JPanel northPanel = new JPanel();
-        JPanel centerPanel = new JPanel(new GridLayout(5, 4, 10, 5	));
+        JPanel centerPanel = new JPanel(new GridLayout(5, 4, 10, 5  ));
         JPanel southPanel = new JPanel();
         Container container = getContentPane();
         container.add(northPanel, BorderLayout.NORTH);
@@ -90,7 +90,12 @@ public class TestScoresView_GUI extends JFrame{
         //attach listeners to buttons
         addButton.addActionListener(new AddListener());
         previousButton.addActionListener(new PreviousListener());
-
+        nextButton.addActionListener(new NextListener());
+        lastButton.addActionListener(new LastListener());
+        firstButton.addActionListener(new FirstListener());
+        modifyButton.addActionListener(new ModifyListener());
+        highScoreButton.addActionListener(new HighScoreListener());
+        aveScoreButton.addActionListener(new AveScoreListener());
         //other attachments will go here (exercise) set window attributes
         setTitle("Student Test Scores");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,6 +134,7 @@ public class TestScoresView_GUI extends JFrame{
         return s;
     }
 
+    //responds to a click on the add button
     private class AddListener implements ActionListener {
         public void actionPerformed (ActionEvent e) {
             //get inputs, validate, and display error and quit
@@ -156,6 +162,80 @@ public class TestScoresView_GUI extends JFrame{
 
         //other listeners for modify, highest score, class average, and
         //navigation go here (exercise)
+    }
+
+    //responds to a click on the > button
+    private class NextListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.next();
+            displayInfo();
+        }
+    }
+
+    //responds to a click on the >> button
+    private class LastListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.last();
+            displayInfo();
+        }
+
+    }
+
+    //responds to a click on the << button
+    private class FirstListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.first();
+            displayInfo();
+        }
+
+    }
+
+    //responds to a click on the Modify button
+    private class ModifyListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+
+            Student s = getInfoFromScreen();
+            String message = s.validateData();
+            if (message != null) {
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, message);
+                return;
+            }
+            //attempt to add student and display error or update fields
+            message = model.replace(s);
+            if (message != null)
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, message);
+            else 
+                displayInfo();
+        }
+
+    }
+
+    private class AveScoreListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            if (model.size() == 0){
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, "No Students Available");
+                return;
+            }
+            int average = model.getClassAverage();
+
+            JOptionPane.showMessageDialog(TestScoresView_GUI.this, 
+                "The average score is " + average);
+        }
+
+    }
+    //responds to a click on the high score button
+    private class HighScoreListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            if (model.size() == 0){
+                JOptionPane.showMessageDialog(TestScoresView_GUI.this, 
+                    "No students available");
+                return;
+            }
+            Student s = model.getHighScore();
+
+            JOptionPane.showMessageDialog(TestScoresView_GUI.this, s.toString());
+
+        }
     }
 
 }

@@ -64,7 +64,7 @@ public class TestScoresModel {
             indexSelectedStudent = -1;
         else {
             indexSelectedStudent = 
-            Math.max(studentCount - 1, indexSelectedStudent - 1);
+            Math.min(studentCount - 1, indexSelectedStudent + 1);
             s = students[indexSelectedStudent];
         }
         return s;
