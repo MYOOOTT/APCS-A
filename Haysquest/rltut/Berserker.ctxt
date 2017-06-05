@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=world\ factory\ pov
+comment0.target=Berserker(World,\ CreatureFactory,\ FieldOfView)
+comment1.params=item
+comment1.target=void\ equip(Item)
+comment2.params=amount
+comment2.target=void\ modifyHP(int)
+comment3.params=other
+comment3.target=void\ attack(Creature)
+comment4.params=item
+comment4.target=void\ unequip(Item)
+numComments=5

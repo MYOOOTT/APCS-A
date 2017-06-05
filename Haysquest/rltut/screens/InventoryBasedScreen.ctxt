@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ getVerb()
+comment1.params=item
+comment1.target=boolean\ isAcceptable(rltut.Item)
+comment2.params=item
+comment2.target=Screen\ use(rltut.Item)
+comment3.params=player
+comment3.target=InventoryBasedScreen(rltut.Creature)
+comment4.params=
+comment4.target=java.util.ArrayList\ getList()
+comment5.params=terminal
+comment5.target=void\ displayOutput(asciiPanel.AsciiPanel)
+comment6.params=key
+comment6.target=Screen\ respondToUserInput(java.awt.event.KeyEvent)
+numComments=7

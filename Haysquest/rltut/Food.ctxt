@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=color\ name
+comment0.target=Food(java.awt.Color,\ java.lang.String)
+comment1.params=
+comment1.target=int\ foodValue()
+comment2.params=amount
+comment2.target=void\ modifyFoodValue(int)
+numComments=3

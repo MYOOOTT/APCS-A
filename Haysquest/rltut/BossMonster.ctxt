@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=world\ maker\ p
+comment0.target=BossMonster(World,\ CreatureFactory,\ Player)
+comment1.params=
+comment1.target=void\ update()
+comment2.params=
+comment2.target=void\ wander()
+comment3.params=target
+comment3.target=void\ hunt(Creature)
+comment4.params=
+comment4.target=void\ onGainLevel()
+numComments=5

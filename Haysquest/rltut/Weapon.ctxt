@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=glyph\ color\ name
+comment0.target=Weapon(char,\ java.awt.Color,\ java.lang.String)
+comment1.params=
+comment1.target=int\ attackValue()
+comment2.params=amount
+comment2.target=void\ modifyAttackValue(int)
+comment3.params=
+comment3.target=java.lang.String\ details()
+numComments=4

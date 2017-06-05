@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=world\ factory\ pov
+comment0.target=Rogue(World,\ CreatureFactory,\ FieldOfView)
+comment1.params=other
+comment1.target=void\ attack(Creature)
+numComments=2

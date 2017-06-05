@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=terminal
+comment0.target=void\ displayOutput(asciiPanel.AsciiPanel)
+comment1.params=terminal\ array
+comment1.target=void\ printArray(asciiPanel.AsciiPanel,\ java.lang.String[])
+comment2.params=key
+comment2.target=Screen\ respondToUserInput(java.awt.event.KeyEvent)
+numComments=3

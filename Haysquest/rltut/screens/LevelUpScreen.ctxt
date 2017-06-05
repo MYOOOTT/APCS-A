@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=player\ picks
+comment0.target=LevelUpScreen(rltut.Creature,\ int)
+comment1.params=terminal
+comment1.target=void\ displayOutput(asciiPanel.AsciiPanel)
+comment2.params=key
+comment2.target=Screen\ respondToUserInput(java.awt.event.KeyEvent)
+numComments=3

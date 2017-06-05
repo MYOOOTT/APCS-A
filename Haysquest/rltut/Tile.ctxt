@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=char\ glyph()
+comment1.params=
+comment1.target=java.awt.Color\ color()
+comment2.params=glyph\ color
+comment2.target=Tile(char,\ java.awt.Color)
+comment3.params=
+comment3.target=boolean\ isGround()
+comment4.params=
+comment4.target=boolean\ isDiggable()
+numComments=5

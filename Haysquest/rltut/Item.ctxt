@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=char\ glyph()
+comment1.params=
+comment1.target=java.awt.Color\ color()
+comment2.params=
+comment2.target=java.lang.String\ name()
+comment3.params=glyph\ color\ name
+comment3.target=Item(char,\ java.awt.Color,\ java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ details()
+numComments=5

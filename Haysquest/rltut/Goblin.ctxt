@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=world\ maker\ p
+comment0.target=Goblin(World,\ CreatureFactory,\ Player)
+comment1.params=
+comment1.target=void\ leaveCorpse()
+comment2.params=
+comment2.target=void\ update()
+comment3.params=
+comment3.target=void\ wander()
+comment4.params=target
+comment4.target=void\ hunt(Creature)
+numComments=5

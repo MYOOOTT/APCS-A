@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PathFinder()
+comment1.params=from\ to
+comment1.target=int\ heuristicCost(Point,\ Point)
+comment10.params=start\ end
+comment10.target=java.util.ArrayList\ createPath(Point,\ Point)
+comment2.params=from
+comment2.target=int\ costToGetTo(Point)
+comment3.params=from\ to
+comment3.target=int\ totalCost(Point,\ Point)
+comment4.params=child\ parent
+comment4.target=void\ reParent(Point,\ Point)
+comment5.params=creature\ start\ end\ maxTries
+comment5.target=java.util.ArrayList\ findPath(Creature,\ Point,\ Point,\ int)
+comment6.params=end
+comment6.target=Point\ getClosestPoint(Point)
+comment7.params=creature\ end\ closest
+comment7.target=void\ checkNeighbors(Creature,\ Point,\ Point)
+comment8.params=closest\ neighbor
+comment8.target=void\ reParentNeighbor(Point,\ Point)
+comment9.params=closest\ neighbor
+comment9.target=void\ reParentNeighborIfNecessary(Point,\ Point)
+numComments=11
